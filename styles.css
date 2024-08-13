@@ -1,0 +1,473 @@
+/* Ensure the entire body has a transparent background */
+body {
+    background-color: transparent; /* Transparent background for the whole website */
+    margin: 0; /* Remove default margin */
+    font-family: var(--unnamed-font-family-manrope); /* Ensure consistent font */
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #FFFFFF; /* White background color for navbar */
+    border-bottom: 1px solid var(--unnamed-color-ededed); /* Light border to separate navbar from content */
+    border-radius: 0 0 15px 15px; /* Rounded corners at the bottom */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow to enhance depth */
+    margin-top: 20px; /* Move the navbar lower */
+}
+
+/* Navbar Logo */
+.navbar-logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+/* Navbar Menu */
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    position: relative; /* Position relative to handle background color changes */
+}
+
+.navbar-menu li a {
+    font-family: var(--unnamed-font-family-manrope);
+    font-size: 14px;
+    font-weight: var(--unnamed-font-weight-normal);
+    color: var(--unnamed-color-707070);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 8px; /* Add padding to create space around text */
+}
+
+/* Background color for the "Patients" menu item */
+.navbar-menu li a[href="#patients"] {
+    background-color: #01F0D0; /* Background color for the "Patients" item */
+    border-radius: 8px; /* Rounded corners for the background */
+    color: #072635; /* Change text color to be readable on the background */
+    padding: 8px; /* Add padding to create space around text */
+}
+
+/* Change icon color to white for better contrast */
+.navbar-menu li a[href="#patients"] img {
+    filter: brightness(0) invert(1); /* This will only work if the icon is in a compatible format */
+}
+
+/* Ensure icons are displayed correctly */
+.navbar-menu li a img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px; /* Space between icon and text */
+}
+
+
+/* Active and Hover States */
+.navbar-menu li a.active,
+.navbar-menu li a:hover {
+    color: var(--unnamed-color-072635);
+}
+
+/* Profile Section */
+.navbar-profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile-image {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column; /* Align name and title vertically */
+    margin-right: 15px;
+}
+
+.profile-name {
+    font-family: var(--unnamed-font-family-manrope);
+    font-size: 14px;
+    font-weight: bold; /* Bold font for the name */
+    color: var(--unnamed-color-072635);
+}
+
+.profile-title {
+    font-family: var(--unnamed-font-family-manrope);
+    font-size: 14px;
+    font-weight: normal; /* Normal font for the title */
+    color: var(--unnamed-color-707070);
+}
+
+.profile-actions {
+    display: flex;
+    align-items: center;
+}
+
+.settings-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px; /* Space between settings icon and dots */
+}
+
+.more-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Indicate that it’s clickable */
+    font-size: 24px; /* Adjust font size to make dots visible */
+    color: var(--unnamed-color-072635);
+}
+
+.more-options::before {
+    content: '⋮'; /* Unicode character for vertical ellipsis */
+}
+
+/* Layout Properties for Navigation Items */
+.icon-overview {
+    position: absolute;
+    top: 46px;
+    left: 473px;
+    width: 16px;
+    height: 17px;
+    background: transparent url('img/home_FILL0_wght300_GRAD0_opsz24.png') no-repeat;
+}
+
+.text-overview {
+    position: absolute;
+    top: 45px;
+    left: 498px;
+    width: 63px;
+    height: 19px;
+    font: normal normal bold 14px/19px Manrope;
+    letter-spacing: 0px;
+    color: #072635;
+}
+
+.icon-patients {
+    position: absolute;
+    top: 46px;
+    left: 617px;
+    width: 24px;
+    height: 17px;
+    background: transparent url('img/group_FILL0_wght300_GRAD0_opsz24.png') no-repeat;
+}
+
+.text-patients {
+    position: absolute;
+    top: 45px;
+    left: 649px;
+    width: 57px;
+    height: 19px;
+    font: normal normal bold 14px/19px Manrope;
+    letter-spacing: 0px;
+    color: #072635;
+}
+
+.icon-schedule {
+    position: absolute;
+    top: 46px;
+    left: 762px;
+    width: 15px;
+    height: 17px;
+    background: transparent url('img/calendar_today_FILL0_wght300_GRAD0_opsz24.png') no-repeat;
+}
+
+.text-schedule {
+    position: absolute;
+    top: 45px;
+    left: 785px;
+    width: 64px;
+    height: 19px;
+    font: normal normal bold 14px/19px Manrope;
+    letter-spacing: 0px;
+    color: #072635;
+}
+
+.icon-message {
+    position: absolute;
+    top: 46px;
+    left: 889px;
+    width: 19px;
+    height: 17px;
+    background: transparent url('img/chat_bubble_FILL0_wght300_GRAD0_opsz24.png') no-repeat;
+}
+
+.text-message {
+    position: absolute;
+    top: 45px;
+    left: 916px;
+    width: 61px;
+    height: 19px;
+    font: normal normal bold 14px/19px Manrope;
+    letter-spacing: 0px;
+    color: #072635;
+}
+
+.icon-transactions {
+    position: absolute;
+    top: 46px;
+    left: 1017px;
+    width: 22px;
+    height: 17px;
+    background: transparent url('img/credit_card_FILL0_wght300_GRAD0_opsz24.png') no-repeat;
+}
+
+.text-transactions {
+    position: absolute;
+    top: 45px;
+    left: 1047px;
+    width: 89px;
+    height: 19px;
+    font: normal normal bold 14px/19px Manrope;
+    letter-spacing: 0px;
+    color: #072635;
+}
+
+.container-dr-jose {
+    position: absolute;
+    top: 32px;
+    left: 1309px;
+    width: 241px;
+    height: 44px;
+}
+
+.image-dr-jose {
+    position: absolute;
+    top: 32px;
+    left: 1309px;
+    width: 44px;
+    height: 44px;
+    background: transparent url('img/senior-woman-doctor-and-portrait-smile-for-health-2023-11-27-05-18-16-utc.png') no-repeat;
+}
+
+.text-dr-jose-name {
+    position: absolute;
+    top: 35px;
+    left: 1361px;
+    width: 119px;
+    height: 19px;
+    font: normal normal bold 14px/19px Manrope;
+    letter-spacing: 0px;
+    color: #072635;
+}
+
+.text-dr-jose-title {
+    position: absolute;
+    top: 54px;
+    left: 1361px;
+    width: 129px;
+    height: 19px;
+    font: normal normal normal 14px/19px Manrope;
+    letter-spacing: 0px;
+    color: #707070;
+}
+
+.icon-settings {
+    position: absolute;
+    top: 44px;
+    left: 1515px;
+    width: 19px;
+    height: 20px;
+    background: transparent url('img/settings_FILL0_wght300_GRAD0_opsz24.png') no-repeat;
+}
+
+.icon-more-options {
+    position: absolute;
+    top: 32px;
+    left: 1546px;
+    width: 4px;
+    height: 18px;
+    background: transparent url('img/more_vert_FILL0_wght300_GRAD0_opsz24.png') no-repeat;
+}
+
+/* Main Content Wrapper */
+.content-wrapper {
+    display: flex;
+    padding: 20px;
+}
+
+/* Sidebar - Patients List */
+.patients-list {
+    width: 367px;
+    height: 1054px;
+    background-color: #ffffff; /* White background for sidebar */
+    border-radius: 16px;
+    padding: 20px;
+    position: relative; /* For positioning the search icon */
+}
+
+/* Heading and Search Icon Container */
+.heading-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; /* Space between heading and patient list */
+}
+
+.card-title-24pt {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.search-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Patient List */
+.patients-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.patients-list li {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    cursor: pointer;
+    position: relative; /* For positioning the more options icon */
+}
+
+/* Patient Image */
+.patients-list li img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Patient Info */
+.patient-info {
+    flex: 1;
+}
+
+.patient-name {
+    display: block;
+    font-size: 14px;
+    color: #072635;
+    font-weight: bold;
+}
+
+.patient-details {
+    font-size: 12px;
+    color: #707070;
+}
+
+/* More Options Icon */
+.more-options-icon {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    color: #707070;
+    text-decoration: none; /* Remove underline from link */
+}
+
+.more-options-icon::before,
+.more-options-icon::after {
+    content: '';
+    width: 16px;
+    height: 2px;
+    background-color: #707070;
+    border-radius: 1px;
+}
+
+.more-options-icon::before {
+    margin-bottom: 4px;
+}
+
+.more-options-icon::after {
+    margin-top: 4px;
+}
+
+
+/* Main Section - Diagnosis History */
+.diagnosis-history {
+    width: 766px;
+    margin-left: 20px;
+    background-color: var(--unnamed-color-ffffff);
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.blood-pressure-chart {
+    width: 100%;
+    height: 300px;
+    background-color: #F4F0FE;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.additional-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.info-box {
+    width: 228px;
+    height: 242px;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.respiratory-rate {
+    background-color: #E0F3FA;
+}
+
+.temperature {
+    background-color: #FFE6E9;
+}
+
+.heart-rate {
+    background-color: #FFE6F1;
+}
+
+/* Sidebar - Patient Details */
+.patient-details {
+    width: 367px;
+    height: 740px;
+    background-color: var(--unnamed-color-ffffff);
+    border-radius: 16px;
+    padding: 20px;
+    margin-left: 20px;
+    text-align: center;
+}
+
+.patient-details img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.patient-details h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.patient-details p {
+    font-size: 14px;
+    color: var(--secondary-text-color);
+    margin-bottom: 5px;
+}
