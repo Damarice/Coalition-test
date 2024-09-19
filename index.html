@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechCare Dashboard</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+ <!-- Navigation -->
+ <nav class="navbar">
+    <!-- Logo -->
+    <div class="navbar-logo">
+        <img src="images/TestLogo (1).svg" alt="Logo">
+    </div>
+
+    <!-- Navigation Items -->
+    <div class="navbar-item">
+        <img src="images/home_FILL0_wght300_GRAD0_opsz24.svg" alt="Home Icon">
+        <span class="nav-text">Overview</span>
+    </div>
+    <div class="navbar-item patients-item">
+        <img src="images/group_FILL0_wght300_GRAD0_opsz24.svg" alt="Group Icon">
+        <span class="nav-text">Patients</span>
+    </div>
+    <div class="navbar-item">
+        <img src="images/calendar_today_FILL0_wght300_GRAD0_opsz24.svg" alt="Calendar Icon">
+        <span class="nav-text">Schedule</span>
+    </div>
+    <div class="navbar-item">
+        <img src="images/chat_bubble_FILL0_wght300_GRAD0_opsz24.svg" alt="Chat Icon">
+        <span class="nav-text">Message</span>
+    </div>
+    <div class="navbar-item">
+        <img src="images/credit_card_FILL0_wght300_GRAD0_opsz24.svg" alt="Payments Icon">
+        <span class="nav-text">Transactions</span>
+    </div>
+
+    <!-- User Profile Section -->
+    <div class="navbar-profile">
+        <img class="profile-image" src="images/senior-woman-doctor-and-portrait-smile-for-health-2023-11-27-05-18-16-utc.png" alt="User Image">
+        <div class="profile-details">
+            <span class="profile-name">Dr. Jose Simmons</span>
+            <span class="profile-role">General Practitioner</span>
+        </div>
+        <img src="images/settings_FILL0_wght300_GRAD0_opsz24.svg" alt="Settings Icon" class="settings-icon">
+        <img src="images/more_vert_FILL0_wght300_GRAD0_opsz24 (1).svg" alt="More Icon" class="more-icon">
+    </div>
+</nav>
+
+        <!-- Main Content Wrapper -->
+        <div class="content-wrapper">
+            <!-- Sidebar - Patients List -->
+            <aside class="patients-list">
+                <div class="heading-container">
+                    <h2 class="card-title-24pt">Patients</h2>
+                    <img src="assets/images/search_FILL0_wght300_GRAD0_opsz24.svg" alt="Search Icon" class="search-icon">
+                </div>
+                     <!-- Patient List -->
+        <ul class="patient-list">
+            <li class="patient-item">
+                <img src="images/layer 8.png" alt="Patient Image" class="patient-image">
+                <div class="patient-info">
+                    <span class="patient-name">Emily Williams</span>
+                    <div class="patient-meta">
+                        <span class="patient-sex">Female</span> , <span class="patient-age">18</span>
+                    </div>
+                </div>
+                <img src="assets/images/more_horiz_FILL0_wght300_GRAD0_opsz24.svg" alt="More Icon" class="more-icon">
+            </li>
+            <li class="patient-item">
+                <img src="images/Layer 1.png" alt="Patient Image" class="patient-image">
+                <div class="patient-info">
+                    <span class="patient-name">Ryan Johnson</span>
+                    <div class="patient-meta">
+                        <span class="patient-sex">Male</span> , <span class="patient-age">45</span>
+                    </div>
+                </div>
+                <img src="images/more_horiz_FILL0_wght300_GRAD0_opsz24.svg" alt="More Icon" class="more-icon">
+            </li>
+            <li class="patient-item">
+                <img src="images/Layer 3.png" alt="Patient Image" class="patient-image">
+                <div class="patient-info">
+                    <span class="patient-name">Brandon Mitchell</span>
+                    <div class="patient-meta">
+                        <span class="patient-sex">Male</span> , <span class="patient-age">36</span>
+                    </div>
+                </div>
+                <img src="images/more_horiz_FILL0_wght300_GRAD0_opsz24.svg" alt="More Icon" class="more-icon">
+            </li>
+            <li class="patient-item">
+                <img src="images/Layer 2.png" alt="Patient Image" class="patient-image">
+                <div class="patient-info">
+                    <span class="patient-name">Jessica Taylor</span>
+                    <div class="patient-meta">
+                        <span class="patient-sex">Female</span> , <span class="patient-age">28</span>
+                    </div>
+                </div>
+                <img src="images/more_horiz_FILL0_wght300_GRAD0_opsz24.svg" alt="More Icon" class="more-icon">
+            </li>
+            <li class="patient-item">
+                <img src="images/Layer 6.png" alt="Patient Image" class="patient-image">
+                <div class="patient-info">
+                    <span class="patient-name">Samantha Johnson</span>
+                    <div class="patient-meta">
+                        <span class="patient-sex">Female</span> , <span class="patient-age">56</span>
+                    </div>
+                </div>
+                <img src="images/more_horiz_FILL0_wght300_GRAD0_opsz24.svg" alt="More Icon" class="more-icon">
+            </li>
+            <li class="patient-item">
+                <img src="images/Layer 12.png" alt="Patient Image" class="patient-image">
+                <div class="patient-info">
+                    <span class="patient-name">Ashley Martinez</span>
+                    <div class="patient-meta">
+                        <span class="patient-sex">Female</span> , <span class="patient-age">54</span>
+                    </div>
+                </div>
+                <img src="images/more_horiz_FILL0_wght300_GRAD0_opsz24.svg" alt="More Icon" class="more-icon">
+            </li>
+            <li class="patient-item">
+                <img src="images/Layer 10.png" alt="Patient Image" class="patient-image">
+                <div class="patient-info">
+                    <span class="patient-name">Olivia Brown</span>
+                    <div class="patient-meta">
+                        <span class="patient-sex">Female</span> , <span class="patient-age">32</span>
+                    </div>
+                </div>
+                <img src="images/more_horiz_FILL0_wght300_GRAD0_opsz24.svg" alt="More Icon" class="more-icon">
+            </li>
+            <li class="patient-item">
+                <img src="images/Layer 9.png" alt="Patient Image" class="patient-image">
+                <div class="patient-info">
+                    <span class="patient-name">Tyler Davis</span>
+                    <div class="patient-meta">
+                        <span class="patient-sex">Male</span> , <span class="patient-age">19</span>
+                    </div>
+                </div>
+                <img src="images/more_horiz_FILL0_wght300_GRAD0_opsz24.svg" alt="More Icon" class="more-icon">
+            </li>
+            <li class="patient-item">
+                <img src="images/Layer 4.png" alt="Patient Image" class="patient-image">
+                <div class="patient-info">
+                    <span class="patient-name">Kevin Anderson</span>
+                    <div class="patient-meta">
+                        <span class="patient-sex">Male</span> , <span class="patient-age">30</span>
+                    </div>
+                </div>
+                <img src="images/more_horiz_FILL0_wght300_GRAD0_opsz24.svg" alt="More Icon" class="more-icon">
+            </li>
+            <li class="patient-item">
+                <img src="images/Layer 5.png" alt="Patient Image" class="patient-image">
+                <div class="patient-info">
+                    <span class="patient-name">Dylan Thompson</span>
+                    <div class="patient-meta">
+                        <span class="patient-sex">Male</span> , <span class="patient-age">36</span>
+                    </div>
+                </div>
+                <img src="images/more_horiz_FILL0_wght300_GRAD0_opsz24.svg" alt="More Icon" class="more-icon">
+            </li>
+            <li class="patient-item">
+                <img src="images/Layer 7.png" alt="Patient Image" class="patient-image">
+                <div class="patient-info">
+                    <span class="patient-name">Rachel Davis</span>
+                    <div class="patient-meta">
+                        <span class="patient-sex">Female</span> , <span class="patient-age">29</span>
+                    </div>
+                </div>
+                <img src="images/more_horiz_FILL0_wght300_GRAD0_opsz24.svg" alt="More Icon" class="more-icon">
+            </li>
+        </ul>
+            </aside>
+<!-- Main Section - Diagnosis History -->
+<main class="diagnosis-history">
+    <h2 class="card-title-24pt">Diagnosis History</h2>
+    <div class="blood-pressure-chart">
+        <canvas id="bloodPressureChart"></canvas> <!-- Chart.js Canvas for Blood Pressure -->
+        <div class="blood-pressure-info">
+            <p class="body-emphasized-14pt">Systolic: 160</p>
+            <p class="body-regular-14">Diastolic: 78</p>
+        </div>
+    </div>
+    <div class="additional-info">
+        <div class="info-box respiratory-rate">
+            <span class="inner-card-title-18pt">Respiratory Rate</span>
+            <strong class="body-emphasized-14pt">20 bpm</strong>
+        </div>
+        <div class="info-box temperature">
+            <span class="inner-card-title-18pt">Temperature</span>
+            <strong class="body-emphasized-14pt">98.6°F</strong>
+        </div>
+        <div class="info-box heart-rate">
+            <span class="inner-card-title-18pt">Heart Rate</span>
+            <strong class="body-emphasized-14pt">72 bpm</strong>
+        </div>
+    </div>
+
+    <!-- Diagnostic List Section -->
+    <div class="diagnostic-list-card">
+        <h2>Diagnostic List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Problem/Diagnosis</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Hypertension</td>
+                    <td>Chronic high blood pressure</td>
+                    <td>Under Observation</td>
+                </tr>
+                <tr>
+                    <td>Type 2 Diabetes</td>
+                    <td>Insulin resistance and elevated blood sugar</td>
+                    <td>Cured</td>
+                </tr>
+                <tr>
+                    <td>Asthma</td>
+                    <td>Bronchial constriction</td>
+                    <td>Inactive</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+
+
+    <!-- Sidebar - Patient Details -->
+<aside class="patient-details">
+    <!-- Profile Info Section -->
+    <div class="profile-info">
+        <!-- Patient's Profile Picture -->
+        <div class="profile-picture">
+            <img src="images/Layer 2@2x.png" alt="Jessica Taylor" class="profile-image">
+        </div>
+        <!-- Patient's Name -->
+        <h2 class="patient-name">Jessica Taylor</h2>
+    </div>
+
+    <!-- Patient Details -->
+    <div class="info-item dob">
+        <img src="images/BirthIcon.svg" alt="Date of Birth Icon" class="info-icon">
+        <div class="info-text">
+            <span class="info-label">Date of Birth</span>
+            <span class="info-value">August 23, 1996</span>
+        </div>
+    </div>
+
+    <div class="info-item gender">
+        <img src="images/FemaleIcon.svg" alt="Gender Icon" class="info-icon">
+        <div class="info-text">
+            <span class="info-label">Gender</span>
+            <span class="info-value">Female</span>
+        </div>
+    </div>
+
+    <div class="info-item contact">
+        <img src="images/PhoneIcon.svg" alt="Phone Icon" class="info-icon">
+        <div class="info-text">
+            <span class="info-label">Contact</span>
+            <span class="info-value">(415) 555-1234</span>
+        </div>
+    </div>
+
+    <div class="info-item emergency">
+        <img src="images/PhoneIcon.svg" alt="Emergency Icon" class="info-icon">
+        <div class="info-text">
+            <span class="info-label">Emergency Contacts</span>
+            <span class="info-value">(415) 555-5678</span>
+        </div>
+    </div>
+
+    <div class="info-item insurance">
+        <img src="images/InsuranceIcon.svg" alt="Insurance Icon" class="info-icon">
+        <div class="info-text">
+            <span class="info-label">Insurance</span>
+            <span class="info-value">Sunrise Health Assurance</span>
+        </div>
+    </div>
+
+    <!-- Show All Information Button -->
+    <div class="show-all-info">
+        <button class="show-all-btn">Show All Information</button>
+    </div>
+
+    <!-- Lab Results Card -->
+    <div class="lab-results-card">
+        <h2>Lab Results</h2>
+        <div class="lab-results">
+            <ul>
+                <li>
+                    <span>Blood Tests</span>
+                    <button class="download-btn">
+                        <img src="images/download_FILL0_wght300_GRAD0_opsz24 (1).svg" alt="Download" class="download-icon">
+                    </button>
+                </li>
+                <li>
+                    <span>CT Scans</span>
+                    <button class="download-btn">
+                        <img src="images/download_FILL0_wght300_GRAD0_opsz24 (1).svg" alt="Download" class="download-icon">
+                    </button>
+                </li>
+                <li>
+                    <span>X-Rays</span>
+                    <button class="download-btn">
+                        <img src="images/download_FILL0_wght300_GRAD0_opsz24 (1).svg" alt="Download" class="download-icon">
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</aside>
+
+    <!-- JavaScript for Interactivity (e.g., API calls, Chart.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js -->
+    <script src="app.js"></script> <!-- Link to your custom JS file -->
+</body>
+</html>

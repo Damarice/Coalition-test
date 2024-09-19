@@ -1,296 +1,182 @@
-/* Ensure the entire body has a transparent background */
-body {
-    background-color: transparent; /* Transparent background for the whole website */
-    margin: 0; /* Remove default margin */
-    font-family: var(--unnamed-font-family-manrope); /* Ensure consistent font */
+:root {
+    /* Existing Color Variables */
+    --unnamed-color-072635: #072635; /* Dark Blue */
+    --unnamed-color-707070: #707070; /* Gray */
+    --activestate-bg-1: #01F0D0; /* Background color for the active state */
+
+    /* Existing Font Family */
+    --unnamed-font-family-manrope: 'Manrope', sans-serif; /* Manrope font */
+
+    /* General Layout */
+    --background-color: #F6F7F8; /* Background color for the whole website */
+    --container-width: 1600px; /* Width for main content area */
+    --container-height: 1195px; /* Height for main content area */
+    --button-width: 220px; /* Width of buttons */
+    --button-height: 41px; /* Height of buttons */
+    --button-radius: 41px; /* Border radius for buttons */
+    --button-color: #01F0D0; /* Button color */
+    --button-text-color: #000; /* Button text color */
+    --button-hover-color: #00e6b3; /* Button hover color */
+    --lab-results-max-height: 300px; /* Max height for lab results section */
 }
 
-/* Navigation Bar */
+/* Navbar Container */
 .navbar {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 1564px;
+    height: 72px;
+    background: #FFFFFF;
+    border-radius: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #FFFFFF; /* White background color for navbar */
-    border-bottom: 1px solid var(--unnamed-color-ededed); /* Light border to separate navbar from content */
-    border-radius: 0 0 15px 15px; /* Rounded corners at the bottom */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow to enhance depth */
-    margin-top: 20px; /* Move the navbar lower */
+    padding: 0 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
-/* Navbar Logo */
+/* Logo */
 .navbar-logo img {
-    height: 40px;
-    margin-right: 10px;
+    width: 211px;
+    height: 48px;
+    background: transparent;
 }
 
-/* Navbar Menu */
-.navbar-menu {
+/* Navigation Menu */
+.nav-menu {
     display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.navbar-menu li {
-    margin-right: 20px;
+/* Navigation Item */
+.navbar-item {
     display: flex;
     align-items: center;
-    position: relative; /* Position relative to handle background color changes */
+    gap: 8px;
 }
 
-.navbar-menu li a {
-    font-family: var(--unnamed-font-family-manrope);
-    font-size: 14px;
-    font-weight: var(--unnamed-font-weight-normal);
-    color: var(--unnamed-color-707070);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    padding: 8px; /* Add padding to create space around text */
-}
-
-/* Background color for the "Patients" menu item */
-.navbar-menu li a[href="#patients"] {
-    background-color: #01F0D0; /* Background color for the "Patients" item */
-    border-radius: 8px; /* Rounded corners for the background */
-    color: #072635; /* Change text color to be readable on the background */
-    padding: 8px; /* Add padding to create space around text */
-}
-
-/* Change icon color to white for better contrast */
-.navbar-menu li a[href="#patients"] img {
-    filter: brightness(0) invert(1); /* This will only work if the icon is in a compatible format */
-}
-
-/* Ensure icons are displayed correctly */
-.navbar-menu li a img {
+/* Navbar Item Image */
+.navbar-item img {
     width: 24px;
     height: 24px;
-    margin-right: 8px; /* Space between icon and text */
 }
 
-
-/* Active and Hover States */
-.navbar-menu li a.active,
-.navbar-menu li a:hover {
+/* Navbar Item Text */
+.nav-text {
+    font: normal bold 14px/19px var(--unnamed-font-family-manrope);
     color: var(--unnamed-color-072635);
 }
 
-/* Profile Section */
+/* Specific Styling for Patients Item */
+.navbar-item.patients-item {
+    background: #01F0D0;
+    border-radius: 41px;
+    padding: 6px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 1;
+}
+
+.navbar-item.patients-item img {
+    width: 24px;
+    height: 24px;
+}
+
+.navbar-item.patients-item .nav-text {
+    color: var(--unnamed-color-072635);
+}
+
+/* User Profile Section */
 .navbar-profile {
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
 .profile-image {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    margin-right: 15px;
+    width: auto; /* Default width (auto lets the image be its natural size) */
+    height: auto; /* Default height (auto lets the image be its natural size) */
+    max-width: 44px; /* Maximum width to control the size */
+    max-height: 44px; /* Maximum height to control the size */
+    border-radius: 50%; /* Circular shape */
+    object-fit: cover; /* Ensure image covers the container without distortion */
+    background: transparent;
 }
 
-.profile-info {
+/* User Profile Details */
+.profile-details {
     display: flex;
-    flex-direction: column; /* Align name and title vertically */
-    margin-right: 15px;
+    flex-direction: column;
+    text-align: left;
 }
 
 .profile-name {
-    font-family: var(--unnamed-font-family-manrope);
-    font-size: 14px;
-    font-weight: bold; /* Bold font for the name */
+    font: normal bold 14px/19px var(--unnamed-font-family-manrope);
     color: var(--unnamed-color-072635);
 }
 
-.profile-title {
-    font-family: var(--unnamed-font-family-manrope);
-    font-size: 14px;
-    font-weight: normal; /* Normal font for the title */
+.profile-role {
+    font: normal 14px/19px var(--unnamed-font-family-manrope);
     color: var(--unnamed-color-707070);
 }
 
-.profile-actions {
-    display: flex;
-    align-items: center;
-}
-
+/* Icons */
 .settings-icon {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px; /* Space between settings icon and dots */
-}
-
-.more-options {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer; /* Indicate that it’s clickable */
-    font-size: 24px; /* Adjust font size to make dots visible */
-    color: var(--unnamed-color-072635);
-}
-
-.more-options::before {
-    content: '⋮'; /* Unicode character for vertical ellipsis */
-}
-
-/* Layout Properties for Navigation Items */
-.icon-overview {
-    position: absolute;
-    top: 46px;
-    left: 473px;
-    width: 16px;
-    height: 17px;
-    background: transparent url('img/home_FILL0_wght300_GRAD0_opsz24.png') no-repeat;
-}
-
-.text-overview {
-    position: absolute;
-    top: 45px;
-    left: 498px;
-    width: 63px;
-    height: 19px;
-    font: normal normal bold 14px/19px Manrope;
-    letter-spacing: 0px;
-    color: #072635;
-}
-
-.icon-patients {
-    position: absolute;
-    top: 46px;
-    left: 617px;
-    width: 24px;
-    height: 17px;
-    background: transparent url('img/group_FILL0_wght300_GRAD0_opsz24.png') no-repeat;
-}
-
-.text-patients {
-    position: absolute;
-    top: 45px;
-    left: 649px;
-    width: 57px;
-    height: 19px;
-    font: normal normal bold 14px/19px Manrope;
-    letter-spacing: 0px;
-    color: #072635;
-}
-
-.icon-schedule {
-    position: absolute;
-    top: 46px;
-    left: 762px;
-    width: 15px;
-    height: 17px;
-    background: transparent url('img/calendar_today_FILL0_wght300_GRAD0_opsz24.png') no-repeat;
-}
-
-.text-schedule {
-    position: absolute;
-    top: 45px;
-    left: 785px;
-    width: 64px;
-    height: 19px;
-    font: normal normal bold 14px/19px Manrope;
-    letter-spacing: 0px;
-    color: #072635;
-}
-
-.icon-message {
-    position: absolute;
-    top: 46px;
-    left: 889px;
-    width: 19px;
-    height: 17px;
-    background: transparent url('img/chat_bubble_FILL0_wght300_GRAD0_opsz24.png') no-repeat;
-}
-
-.text-message {
-    position: absolute;
-    top: 45px;
-    left: 916px;
-    width: 61px;
-    height: 19px;
-    font: normal normal bold 14px/19px Manrope;
-    letter-spacing: 0px;
-    color: #072635;
-}
-
-.icon-transactions {
-    position: absolute;
-    top: 46px;
-    left: 1017px;
-    width: 22px;
-    height: 17px;
-    background: transparent url('img/credit_card_FILL0_wght300_GRAD0_opsz24.png') no-repeat;
-}
-
-.text-transactions {
-    position: absolute;
-    top: 45px;
-    left: 1047px;
-    width: 89px;
-    height: 19px;
-    font: normal normal bold 14px/19px Manrope;
-    letter-spacing: 0px;
-    color: #072635;
-}
-
-.container-dr-jose {
-    position: absolute;
-    top: 32px;
-    left: 1309px;
-    width: 241px;
-    height: 44px;
-}
-
-.image-dr-jose {
-    position: absolute;
-    top: 32px;
-    left: 1309px;
-    width: 44px;
-    height: 44px;
-    background: transparent url('img/senior-woman-doctor-and-portrait-smile-for-health-2023-11-27-05-18-16-utc.png') no-repeat;
-}
-
-.text-dr-jose-name {
-    position: absolute;
-    top: 35px;
-    left: 1361px;
-    width: 119px;
-    height: 19px;
-    font: normal normal bold 14px/19px Manrope;
-    letter-spacing: 0px;
-    color: #072635;
-}
-
-.text-dr-jose-title {
-    position: absolute;
-    top: 54px;
-    left: 1361px;
-    width: 129px;
-    height: 19px;
-    font: normal normal normal 14px/19px Manrope;
-    letter-spacing: 0px;
-    color: #707070;
-}
-
-.icon-settings {
-    position: absolute;
-    top: 44px;
-    left: 1515px;
     width: 19px;
     height: 20px;
-    background: transparent url('img/settings_FILL0_wght300_GRAD0_opsz24.png') no-repeat;
+    background: transparent url('images/settings_FILL0_wght300_GRAD0_opsz24.svg') no-repeat;
 }
 
-.icon-more-options {
-    position: absolute;
-    top: 32px;
-    left: 1546px;
-    width: 4px;
-    height: 18px;
-    background: transparent url('img/more_vert_FILL0_wght300_GRAD0_opsz24.png') no-repeat;
+.more-icon {
+    width: 19px;
+    height: 20px;
+    background: transparent url('images/more_vert_FILL0_wght300_GRAD0_opsz24 (1).svg') no-repeat;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .navbar {
+        padding: 0 15px;
+    }
+    
+    .nav-menu {
+        gap: 10px;
+    }
+    
+    .navbar-logo img {
+        width: 180px;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 10px;
+    }
+    
+    .nav-menu {
+        gap: 5px;
+        flex-direction: column;
+    }
+    
+    .navbar-logo img {
+        width: 150px;
+    }
+    
+    .navbar-profile {
+        flex-direction: column;
+    }
+    
+    .profile-image {
+        max-width: 36px; /* Adjusted for smaller screens */
+        max-height: 36px; /* Adjusted for smaller screens */
+    }
 }
 
 /* Main Content Wrapper */
@@ -302,100 +188,77 @@ body {
 /* Sidebar - Patients List */
 .patients-list {
     width: 367px;
-    height: 1054px;
+    height: 740px;
     background-color: #ffffff; /* White background for sidebar */
     border-radius: 16px;
     padding: 20px;
-    position: relative; /* For positioning the search icon */
 }
 
-/* Heading and Search Icon Container */
+/* Heading Container */
 .heading-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px; /* Space between heading and patient list */
+    margin-bottom: 20px;
 }
 
 .card-title-24pt {
     font-size: 24px;
-    font-weight: bold;
+    color: #072635;
 }
 
 .search-icon {
-    width: 24px;
-    height: 24px;
+    width: auto; /* Default size */
+    height: auto; /* Default size */
+    max-width: 24px; /* Ensure the icon does not exceed this width */
+    max-height: 24px; /* Ensure the icon does not exceed this height */
 }
 
 /* Patient List */
-.patients-list ul {
+.patient-list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.patients-list li {
+.patient-item {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 10px 0;
-    cursor: pointer;
-    position: relative; /* For positioning the more options icon */
+    border-bottom: 1px solid #e0e0e0;
 }
 
-/* Patient Image */
-.patients-list li img {
-    width: 40px;
-    height: 40px;
+.patient-image {
+    width: 50px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
     border-radius: 50%;
-    margin-right: 10px;
+    margin-right: 15px;
 }
 
-/* Patient Info */
 .patient-info {
     flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .patient-name {
-    display: block;
-    font-size: 14px;
+    font-size: 16px;
     color: #072635;
     font-weight: bold;
 }
 
-.patient-details {
-    font-size: 12px;
+.patient-meta {
+    font-size: 14px;
     color: #707070;
 }
 
-/* More Options Icon */
-.more-options-icon {
-    width: 16px;
-    height: 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
-    color: #707070;
-    text-decoration: none; /* Remove underline from link */
+.more-icon {
+    width: auto; /* Default size */
+    height: auto; /* Default size */
+    max-width: 24px; /* Ensure the icon does not exceed this width */
+    max-height: 24px; /* Ensure the icon does not exceed this height */
 }
-
-.more-options-icon::before,
-.more-options-icon::after {
-    content: '';
-    width: 16px;
-    height: 2px;
-    background-color: #707070;
-    border-radius: 1px;
-}
-
-.more-options-icon::before {
-    margin-bottom: 4px;
-}
-
-.more-options-icon::after {
-    margin-top: 4px;
-}
-
 
 /* Main Section - Diagnosis History */
 .diagnosis-history {
@@ -447,27 +310,119 @@ body {
 .patient-details {
     width: 367px;
     height: 740px;
-    background-color: var(--unnamed-color-ffffff);
+    background-color: #ffffff; /* White background for sidebar */
     border-radius: 16px;
     padding: 20px;
-    margin-left: 20px;
     text-align: center;
 }
 
-.patient-details img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+/* Profile Info Section */
+.profile-info {
     margin-bottom: 20px;
 }
 
-.patient-details h3 {
-    font-size: 18px;
+.profile-picture {
     margin-bottom: 10px;
 }
 
-.patient-details p {
+.profile-image {
+    width: 150px; /* Adjust if needed */
+    height: 150px; /* Adjust if needed */
+    border-radius: 50%;
+}
+
+/* Patient Name */
+.patient-name {
+    font-size: 18px;
+    color: #072635;
+    font-weight: bold;
+}
+
+/* Info Items */
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
     font-size: 14px;
-    color: var(--secondary-text-color);
-    margin-bottom: 5px;
+    color: #707070;
+}
+
+.info-icon {
+    width: auto; /* Default size */
+    height: auto; /* Default size */
+    max-width: 24px; /* Ensure icons do not exceed this width */
+    max-height: 24px; /* Ensure icons do not exceed this height */
+    margin-right: 10px;
+}
+
+.info-text {
+    text-align: left;
+}
+
+.info-label {
+    display: block;
+    font-weight: bold;
+    color: #072635;
+}
+
+.info-value {
+    display: block;
+    color: #707070;
+}
+
+/* Show All Information Button */
+.show-all-info {
+    margin-top: 20px;
+}
+
+.show-all-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #01F0D0;
+    border: none;
+    border-radius: 41px;
+    color: #000;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.show-all-btn:hover {
+    background-color: #00e6b3;
+}
+
+/* Lab Results Card */
+.lab-results-card {
+    margin-top: 20px;
+}
+
+.lab-results-card h2 {
+    font-size: 16px;
+    color: #072635;
+    margin-bottom: 10px;
+}
+
+.lab-results ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lab-results li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.download-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.download-icon {
+    width: auto; /* Default size */
+    height: auto; /* Default size */
+    max-width: 20px; /* Ensure icons do not exceed this width */
+    max-height: 20px; /* Ensure icons do not exceed this height */
 }
