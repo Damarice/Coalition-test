@@ -23,8 +23,6 @@
 /* Navbar Container */
 .navbar {
     position: relative;
-    top: 0;
-    left: 0;
     width: 100%;
     max-width: 1564px;
     height: 72px;
@@ -41,8 +39,7 @@
 /* Logo */
 .navbar-logo img {
     width: 211px;
-    height: 48px;
-    background: transparent;
+    height: auto;
 }
 
 /* Navigation Menu */
@@ -68,19 +65,18 @@
 
 /* Navbar Item Text */
 .nav-text {
-    font: normal bold 14px/19px var(--unnamed-font-family-manrope);
+    font: bold 14px/19px var(--unnamed-font-family-manrope);
     color: var(--unnamed-color-072635);
 }
 
 /* Specific Styling for Patients Item */
 .navbar-item.patients-item {
-    background: #01F0D0;
-    border-radius: 41px;
+    background: var(--activestate-bg-1);
+    border-radius: var(--button-radius);
     padding: 6px 16px;
     display: flex;
     align-items: center;
     gap: 8px;
-    opacity: 1;
 }
 
 .navbar-item.patients-item img {
@@ -100,13 +96,12 @@
 }
 
 .profile-image {
-    width: auto; /* Default width (auto lets the image be its natural size) */
-    height: auto; /* Default height (auto lets the image be its natural size) */
+    width: auto; /* Default width */
+    height: auto; /* Default height */
     max-width: 44px; /* Maximum width to control the size */
     max-height: 44px; /* Maximum height to control the size */
     border-radius: 50%; /* Circular shape */
     object-fit: cover; /* Ensure image covers the container without distortion */
-    background: transparent;
 }
 
 /* User Profile Details */
@@ -117,7 +112,7 @@
 }
 
 .profile-name {
-    font: normal bold 14px/19px var(--unnamed-font-family-manrope);
+    font: bold 14px/19px var(--unnamed-font-family-manrope);
     color: var(--unnamed-color-072635);
 }
 
@@ -130,13 +125,18 @@
 .settings-icon {
     width: 19px;
     height: 20px;
-    background: transparent url('images/settings_FILL0_wght300_GRAD0_opsz24.svg') no-repeat;
+    background: url('images/settings_FILL0_wght300_GRAD0_opsz24.svg') no-repeat;
 }
 
 .more-icon {
     width: 19px;
     height: 20px;
-    background: transparent url('images/more_vert_FILL0_wght300_GRAD0_opsz24 (1).svg') no-repeat;
+    background: url('images/more_vert_FILL0_wght300_GRAD0_opsz24 (1).svg') no-repeat;
+}
+
+.more-icon {
+    width: 24px; /* Ensure the icon does not exceed this size */
+    height: 24px; /* Ensure the icon does not exceed this size */
 }
 
 /* Responsive Adjustments */
@@ -151,7 +151,6 @@
     
     .navbar-logo img {
         width: 180px;
-        height: auto;
     }
 }
 
@@ -183,6 +182,7 @@
 .content-wrapper {
     display: flex;
     padding: 20px;
+    gap: 20px;
 }
 
 /* Sidebar - Patients List */
@@ -204,14 +204,12 @@
 
 .card-title-24pt {
     font-size: 24px;
-    color: #072635;
+    color: var(--unnamed-color-072635);
 }
 
 .search-icon {
-    width: auto; /* Default size */
-    height: auto; /* Default size */
-    max-width: 24px; /* Ensure the icon does not exceed this width */
-    max-height: 24px; /* Ensure the icon does not exceed this height */
+    width: 24px; /* Ensure the icon does not exceed this size */
+    height: 24px; /* Ensure the icon does not exceed this size */
 }
 
 /* Patient List */
@@ -230,8 +228,8 @@
 }
 
 .patient-image {
-    width: 50px; /* Adjust as needed */
-    height: 50px; /* Adjust as needed */
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     margin-right: 15px;
 }
@@ -244,27 +242,25 @@
 
 .patient-name {
     font-size: 16px;
-    color: #072635;
+    color: var(--unnamed-color-072635);
     font-weight: bold;
 }
 
 .patient-meta {
     font-size: 14px;
-    color: #707070;
+    color: var(--unnamed-color-707070);
 }
 
 .more-icon {
-    width: auto; /* Default size */
-    height: auto; /* Default size */
-    max-width: 24px; /* Ensure the icon does not exceed this width */
-    max-height: 24px; /* Ensure the icon does not exceed this height */
+    width: 24px; /* Ensure the icon does not exceed this size */
+    height: 24px; /* Ensure the icon does not exceed this size */
 }
 
 /* Main Section - Diagnosis History */
 .diagnosis-history {
     width: 766px;
     margin-left: 20px;
-    background-color: var(--unnamed-color-ffffff);
+    background-color: #ffffff;
     border-radius: 16px;
     padding: 20px;
 }
@@ -306,6 +302,30 @@
     background-color: #FFE6F1;
 }
 
+.additional-info {
+    display: flex;
+    gap: 20px;
+}
+
+.info-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.info-icon {
+    /* Removed width and height to use default size */
+    margin-right: 10px;
+}
+
+.info-text {
+    display: flex;
+    flex-direction: column;
+}
+
+
 /* Sidebar - Patient Details */
 .patient-details {
     width: 367px;
@@ -326,15 +346,15 @@
 }
 
 .profile-image {
-    width: 150px; /* Adjust if needed */
-    height: 150px; /* Adjust if needed */
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
 }
 
 /* Patient Name */
 .patient-name {
     font-size: 18px;
-    color: #072635;
+    color: var(--unnamed-color-072635);
     font-weight: bold;
 }
 
@@ -344,14 +364,12 @@
     align-items: center;
     margin-bottom: 15px;
     font-size: 14px;
-    color: #707070;
+    color: var(--unnamed-color-707070);
 }
 
 .info-icon {
-    width: auto; /* Default size */
-    height: auto; /* Default size */
-    max-width: 24px; /* Ensure icons do not exceed this width */
-    max-height: 24px; /* Ensure icons do not exceed this height */
+    width: 24px; /* Ensure icons do not exceed this size */
+    height: 24px; /* Ensure icons do not exceed this size */
     margin-right: 10px;
 }
 
@@ -362,67 +380,120 @@
 .info-label {
     display: block;
     font-weight: bold;
-    color: #072635;
+    color: var(--unnamed-color-072635);
 }
 
 .info-value {
     display: block;
-    color: #707070;
+    color: var(--unnamed-color-707070);
 }
 
-/* Show All Information Button */
-.show-all-info {
-    margin-top: 20px;
+/* Settings Container */
+.settings-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
-.show-all-btn {
-    width: 100%;
-    padding: 10px;
-    background-color: #01F0D0;
-    border: none;
-    border-radius: 41px;
-    color: #000;
-    font-size: 14px;
-    cursor: pointer;
+.settings-icon {
+    width: 24px; /* Ensure icons do not exceed this size */
+    height: 24px; /* Ensure icons do not exceed this size */
 }
 
-.show-all-btn:hover {
-    background-color: #00e6b3;
-}
-
-/* Lab Results Card */
-.lab-results-card {
-    margin-top: 20px;
-}
-
-.lab-results-card h2 {
-    font-size: 16px;
-    color: #072635;
-    margin-bottom: 10px;
-}
-
-.lab-results ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.lab-results li {
+/* Bottom Navigation Bar */
+.bottom-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    padding: 10px;
+    background: #f1f1f1;
+    border-top: 1px solid #e0e0e0;
 }
 
-.download-btn {
-    background: none;
-    border: none;
+.bottom-nav-button {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: var(--unnamed-color-072635);
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.download-icon {
-    width: auto; /* Default size */
-    height: auto; /* Default size */
-    max-width: 20px; /* Ensure icons do not exceed this width */
-    max-height: 20px; /* Ensure icons do not exceed this height */
+.bottom-nav-button:hover {
+    background-color: #f5f5f5;
 }
+
+.bottom-nav-button img {
+    margin-right: 10px;
+}
+
+/* Form Styles */
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--unnamed-color-707070);
+    box-sizing: border-box;
+}
+
+.input-field:focus {
+    border-color: var(--activestate-bg-1);
+    outline: none;
+}
+
+/* Button Styles */
+.button {
+    width: var(--button-width);
+    height: var(--button-height);
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: var(--button-radius);
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: var(--button-hover-color);
+}
+
+/* Card Styles */
+.card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 20px;
+    color: var(--unnamed-color-072635);
+    margin-bottom: 10px;
+}
+
+.card-content {
+    font-size: 14px;
+    color: var(--unnamed-color-707070);
+}
+
+/* Miscellaneous */
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+/* Centering text within containers */
+.centered-text {
+    text-align: center;
+}
+

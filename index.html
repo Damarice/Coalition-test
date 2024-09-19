@@ -9,8 +9,8 @@
 
 </head>
 <body>
- <!-- Navigation -->
- <nav class="navbar">
+<!-- Navigation -->
+<nav class="navbar">
     <!-- Logo -->
     <div class="navbar-logo">
         <img src="images/TestLogo (1).svg" alt="Logo">
@@ -50,16 +50,15 @@
     </div>
 </nav>
 
-        <!-- Main Content Wrapper -->
-        <div class="content-wrapper">
-            <!-- Sidebar - Patients List -->
-            <aside class="patients-list">
-                <div class="heading-container">
-                    <h2 class="card-title-24pt">Patients</h2>
-                    <img src="assets/images/search_FILL0_wght300_GRAD0_opsz24.svg" alt="Search Icon" class="search-icon">
-                </div>
-                     <!-- Patient List -->
-        <ul class="patient-list">
+<div class="content-wrapper">
+    <!-- Sidebar - Patients List -->
+    <aside class="patients-list">
+        <div class="heading-container">
+            <h2 class="card-title-24pt">Patients</h2>
+            <img src="assets/images/search_FILL0_wght300_GRAD0_opsz24.svg" alt="Search Icon" class="search-icon">
+        </div>
+    <!-- Patient List -->
+    <ul class="patient-list">
             <li class="patient-item">
                 <img src="images/layer 8.png" alt="Patient Image" class="patient-image">
                 <div class="patient-info">
@@ -184,18 +183,28 @@
     </div>
     <div class="additional-info">
         <div class="info-box respiratory-rate">
-            <span class="inner-card-title-18pt">Respiratory Rate</span>
-            <strong class="body-emphasized-14pt">20 bpm</strong>
+            <img src="assets/images/respiratory rate.svg" alt="Respiratory Rate Icon" class="info-icon">
+            <div class="info-text">
+                <span class="inner-card-title-18pt">Respiratory Rate</span>
+                <strong class="body-emphasized-14pt">20 bpm</strong>
+            </div>
         </div>
         <div class="info-box temperature">
-            <span class="inner-card-title-18pt">Temperature</span>
-            <strong class="body-emphasized-14pt">98.6°F</strong>
+            <img src="assets/images/temperature.svg" alt="Temperature Icon" class="info-icon">
+            <div class="info-text">
+                <span class="inner-card-title-18pt">Temperature</span>
+                <strong class="body-emphasized-14pt">98.6°F</strong>
+            </div>
         </div>
         <div class="info-box heart-rate">
-            <span class="inner-card-title-18pt">Heart Rate</span>
-            <strong class="body-emphasized-14pt">72 bpm</strong>
+            <img src="assets/images/HeartBPM.svg" alt="Heart Rate Icon" class="info-icon">
+            <div class="info-text">
+                <span class="inner-card-title-18pt">Heart Rate</span>
+                <strong class="body-emphasized-14pt">72 bpm</strong>
+            </div>
         </div>
     </div>
+    
 
     <!-- Diagnostic List Section -->
     <div class="diagnostic-list-card">
@@ -229,8 +238,7 @@
     </div>
 </main>
 
-
-    <!-- Sidebar - Patient Details -->
+<!-- Sidebar - Patient Details -->
 <aside class="patient-details">
     <!-- Profile Info Section -->
     <div class="profile-info">
@@ -315,9 +323,11 @@
         </div>
     </div>
 </aside>
+</div>
+    
+<!-- JavaScript for Interactivity (e.g., API calls, Chart.js) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js -->
+<script src="app.js"></script> <!-- Link to your custom JS file -->
 
-    <!-- JavaScript for Interactivity (e.g., API calls, Chart.js) -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js -->
-    <script src="app.js"></script> <!-- Link to your custom JS file -->
 </body>
 </html>
