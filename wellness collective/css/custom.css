@@ -1,0 +1,39 @@
+/* custom.css */
+
+/* Primary Color */
+:root {
+    --primary-color: #ba1624;
+    --secondary-color: #faa507;
+}
+
+/* Override Bootstrap primary color */
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+/* Override Bootstrap secondary color */
+.btn-secondary {
+    background-color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+}
+
+/* Override text color */
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.text-secondary {
+    color: var(--secondary-color) !important;
+}
+
+/* Other elements */
+.site-footer {
+    background-color: var(--primary-color);
+}
+
+.site-footer a {
+    color: var(--secondary-color);
+}
+
+/* Add more overrides as needed */
