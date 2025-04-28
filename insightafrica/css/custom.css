@@ -1,0 +1,79 @@
+:root {
+    --primary-color: #236499;
+}
+
+/* Navbar Background */
+.navbar {
+    background-color: white !important;
+}
+
+/* Button Primary Style */
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+/* General Text Primary */
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+/* Navbar Links in Primary Color */
+.navbar-nav .nav-link {
+    color: var(--primary-color) !important;
+    font-weight: 500;
+    text-decoration: none !important; /* Removes underline */
+    border: none !important; /* Removes any borders */
+}
+
+/* Active State (optional: can bold or underline) */
+.navbar-nav .nav-link.active {
+    font-weight: 600;
+    text-decoration: underline !important; /* Keep underline for active link */
+    background-color: transparent !important; /* Remove background for active link */
+}
+
+/* Remove underline or border from navbar links on hover */
+.navbar-nav .nav-item .nav-link:hover {
+    text-decoration: none !important;
+    border: none !important;
+}
+
+/* Optional: Remove any border or background color when active */
+.navbar-nav .nav-item .nav-link.active {
+    border: none !important;
+    background-color: transparent !important;
+}
+
+/* Dropdown Toggle (arrows, remove border) */
+.navbar-nav .nav-item .nav-link.dropdown-toggle {
+    border: none !important;
+}
+/* Ensure Topbar is visible */
+.topbar {
+    background-color: #f8f9fa; /* Light color */
+    padding: 10px 0; /* Add padding to ensure content isn't too close to the edges */
+    z-index: 9999; /* Make sure it sits on top of other content */
+    position: relative; /* Ensure the positioning is correct */
+}
+
+/* Make sure the content inside topbar is centered and responsive */
+.topbar .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar .text-muted {
+    color: #6c757d !important; /* Ensure text color is appropriate */
+}
+
+/* Ensure the icons have consistent spacing */
+.topbar .fas {
+    margin-right: 8px; /* Add space between icons and text */
+}
+
+/* Optional: Adjust padding for better spacing */
+.navbar {
+    padding-top: 70px; /* Adjust navbar position if needed */
+}
